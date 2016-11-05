@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/bdharris08/smarthat#readme",
   "dependencies": {
-    "openwhisk": "^2.1.6"
+    "base64-stream": "^0.1.3",
+    "cloudant": "^1.5.2",
+    "openwhisk": "^2.1.6",
+    "speaker": "^0.3.0",
+    "wav": "^1.0.1"
   }
 }
