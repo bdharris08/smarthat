@@ -1,0 +1,22 @@
+{
+  "name": "smarthat",
+  "version": "1.0.0",
+  "description": "smart hat",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdharris08/smarthat.git"
+  },
+  "author": "sirhacksalot-team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdharris08/smarthat/issues"
+  },
+  "homepage": "https://github.com/bdharris08/smarthat#readme",
+  "dependencies": {
+    "openwhisk": "^2.1.6"
+  }
+}
