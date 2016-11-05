@@ -1,0 +1,9 @@
+{
+  "name": "google_vision",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/vision": "^0.5.0"
+  }
+}
