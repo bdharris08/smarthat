@@ -1,7 +1,7 @@
 const twilioAPI = require('./twilio_api/api');
 
-const message = 'word to your mother';
-const toNumber = '+1-123-123-1234';
-const fromNumber = '+1-123-132-1234';
+const message = process.argv[2];
+const toNumber = process.argv[3];
+const fromNumber = process.argv[4];
 
 twilioAPI.sendMessage(message, toNumber, fromNumber);
