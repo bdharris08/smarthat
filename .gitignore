@@ -45,3 +45,5 @@ config/config.js
 config/keyfile.json
 
 *.wav
+
+*.jpg
