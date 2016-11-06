@@ -2,7 +2,7 @@
 
 var m = require('mraa'); //require mraa
 
-var pin = process.argv[2] || 27;
+var pin = parseInt(process.argv[2]) || 27;
 var myLed = new m.Gpio(pin); //onboard LED
 console.log(port);
 myLed.dir(m.DIR_OUT); //set the gpio direction to output
@@ -17,7 +17,7 @@ function periodicActivity()
   iterator++;
 
   if (iterator < 10) {
-    setTimeout(periodicActivity, process.argv[3] || 1000); //call the indicated function after 1 second (1000 milliseconds)
+    setTimeout(periodicActivity, parseInt(process.argv[3]) || 1000); //call the indicated function after 1 second (1000 milliseconds)
   }
 }
 
