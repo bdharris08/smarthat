@@ -23,7 +23,7 @@ var streamify = function(text) {
   return s;
 };
 
-var invokeTTS = function(payload, callback) {
+var invokeTTS = function(payload, filepath, callback) {
   ow.actions.invoke({
     actionName: 'textToSpeech-smart-hat',
     blocking: true,
@@ -32,7 +32,7 @@ var invokeTTS = function(payload, callback) {
     }
   }).then(function(res) {
     payload = res.response.result.payload;
-    streamify(payload).pipe(base64.decode()).pipe(fs.createWriteStream('speech.wav'));
+    streamify(payload).pipe(base64.decode()).pipe(fs.createWriteStream(filepath));
     callback(null, 'success');
   }).catch(function(err) {
     callback(err, null);
