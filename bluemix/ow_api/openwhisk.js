@@ -54,6 +54,21 @@ var invokeTranslate = function(payload, callback) {
   })
 };
 
+var invokeSpanishToWav = function(payload, callback) {
+  ow.actions.invoke({
+    actionName: 'translate-spanish-smart-hat',
+    blocking: true,
+    params: {
+      message: payload
+    }
+  }).then(function(res) {
+    payload = res.response.result.payload;
+    console.log(payload)
+  }).catch(function(err) {
+    callback(err, null);
+  });
+};
+
 var invokeHelloWorld = function(payload) {
   ow.actions.invoke({
     actionName: 'Hello World With Params',
