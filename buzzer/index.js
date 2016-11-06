@@ -4,7 +4,7 @@ var m = require('mraa'); //require mraa
 
 var pin = parseInt(process.argv[2]) || 27;
 var myLed = new m.Gpio(pin); //onboard LED
-console.log(port);
+console.log(pin);
 myLed.dir(m.DIR_OUT); //set the gpio direction to output
 var ledState = true; //Boolean to hold the state of Led
 
