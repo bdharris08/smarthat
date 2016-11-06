@@ -19,10 +19,15 @@ const visionClient = vision({
 const imgToWav = function(img) {
   visionClient.detectText(img).then((data) => {
     const text = data[0][0].replace(/(\n)/gm, ' ');
-    openWhisk.invokeTTS(text, `${wavFullPath}`, (err, res) => {
-      if(err) console.log(err)
-      else console.log(res)
-    })
+
+    openWhisk.invokeTranslate(text, (err, res) => {
+      if (err) console.log(err)
+      else openWhisk.invokeTTS(res, `${wavFullPath}`, (err, res) => {
+        if (err) console.log(err)
+        else console.log(res)
+      })
+    });
+
   }).catch((err) => {
     console.log(err);
   })
