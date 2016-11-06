@@ -6,7 +6,7 @@
 
 const vision = require('@google-cloud/vision');
 const config = require('./config/config');
-const exec = require('child_process').exec;
+const exec = require('child_process').execSync;
 
 const img = process.argv[2];
 const espeak = `espeak -s 150 -v en` //ubuntu
