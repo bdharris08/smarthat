@@ -22,7 +22,8 @@ const imgToSpeech = function(img) {
     const text = data[0][0].replace(/(\n)/gm, ' ');
     //console.log(data)
     console.log(`text ${text}`);
-    exec(`${espeak} ${text}`);
+    console.log(`command: ${espeak} "${text}"`);
+    exec(`${espeak} "${text}"`);
   }).catch((err) => {
     console.log(err);
   })
