@@ -9,7 +9,7 @@ const config = require('./config/config');
 const openWhisk = require('../bluemix/ow_api/openwhisk.js');
 
 const img = process.argv[2];
-const wavFullPath = process.argv[3];
+const wavFullPath = process.argv[3] || 'speech.wav';
 
 const visionClient = vision({
   projectId: config.projectId,
@@ -20,7 +20,7 @@ const imgToWav = function(img) {
   visionClient.detectText(img).then((data) => {
     const text = data[0][0].replace(/(\n)/gm, ' ');
 
-    openWhisk.invokeTranslate(text, (err, res) => {
+    openWhisk.invokeSpanishTranslate(text, (err, res) => {
       if (err) console.log(err)
       else openWhisk.invokeTTS(res, `${wavFullPath}`, (err, res) => {
         if (err) console.log(err)

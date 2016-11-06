@@ -10,7 +10,10 @@ var openWhisk = require('./ow_api/openwhisk.js');
 //})
 
 
-openWhisk.invokeSpanishToWav('hola mi nombre es Ben', (err, res) => {
+openWhisk.invokeSpanishTranslate('hola mi nombre es Ben', (err, res) => {
   if (err) console.log(err)
-  else console.log(res)
-})
+  else openWhisk.invokeTTS(res, 'something.wav', (err, res) => {
+    if (err) console.log(err)
+    else console.log(res)
+  });
+});

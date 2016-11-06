@@ -16,6 +16,13 @@ $node picToSpeech/itowave_spanish.js picToSpeech/small.jpg test3.wav
 $node picToSpeech/itowave.js picToSpeech/small.jpg test3.wav
 ```
 
+## Image with english or spanish => english wav file
+
+```
+// node picToSpeech/itowave_spanish.js [path to image file] [path to generated wav file]
+$node picToSpeech/itowave.js picToSpeech/small.jpg test3.wav
+```
+
 ## Play wav file (Ubuntu)
 ```
 // aplay [wav file]

@@ -35,7 +35,7 @@ var invokeTTS = function(payload, filepath, callback) {
     streamify(payload).pipe(base64.decode()).pipe(fs.createWriteStream(filepath));
     callback(null, 'success');
   }).catch(function(err) {
-    callback(err, null);
+    console.log(err, null);
   });
 };
 
@@ -54,7 +54,7 @@ var invokeTranslate = function(payload, callback) {
   })
 };
 
-var invokeSpanishToWav = function(payload, callback) {
+var invokeSpanishTranslate = function(payload, callback) {
   ow.actions.invoke({
     actionName: 'translate-spanish-smart-hat',
     blocking: true,
@@ -63,7 +63,7 @@ var invokeSpanishToWav = function(payload, callback) {
     }
   }).then(function(res) {
     payload = res.response.result.payload;
-    console.log(payload)
+    callback(null, payload)
   }).catch(function(err) {
     callback(err, null);
   });
@@ -83,4 +83,4 @@ var invokeHelloWorld = function(payload) {
   })
 }
 
-module.exports = {invokeTTS, invokeTranslate};
+module.exports = {invokeTTS, invokeTranslate, invokeSpanishTranslate};

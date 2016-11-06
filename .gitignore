@@ -43,3 +43,5 @@ keyfile.json
 ow_cred.json
 config/config.js
 config/keyfile.json
+
+*.wav
