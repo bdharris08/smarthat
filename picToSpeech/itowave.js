@@ -29,4 +29,4 @@ const imgToWav = function(img) {
 
 imgToWav(img);
 
-module.export = imgToSpeech;
+module.export = imgToWav;
