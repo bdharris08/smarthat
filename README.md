@@ -28,3 +28,15 @@ $aplay test3.wav
 // node twilio/index.js [message] [to number] [from number]
 $node twilio/index.js "word to your mother." "123-123-1234" "111-111-1111"
 ```
+
+## Trigger left blinker (GPIO 6)
+```
+// Requires sudo because of GPIO
+$sudo sh blinker/blink_left.sh
+```
+
+## Trigger right blinker (GPIO 8)
+```
+// Requires sudo because of GPIO
+$sudo sh blinker/blink_right.sh
+```
