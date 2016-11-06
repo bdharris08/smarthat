@@ -24,7 +24,7 @@ var streamify = function(text) {
   return s;
 };
 
-var invokeTTS = function(payload) {
+var invokeTTS = function(payload, callback) {
   ow.actions.invoke({
     actionName: 'textToSpeech-smart-hat',
     blocking: true,
@@ -39,14 +39,26 @@ var invokeTTS = function(payload) {
       reader.pipe(new Speaker(format));
     });
     streamify(payload).pipe(base64.decode()).pipe(reader);
-    //var snd = new Audio("data:audio/wav;base64," + payload);
-    //snd.play();
+    callback(null, 'success');
   }).catch(function(err) {
-    console.log(err)
+    callback(err, null);
   });
 };
 
-
+var invokeTranslate = function(payload, callback) {
+  ow.actions.invoke({
+    actionName: 'translate-smart-hat',
+    blocking: true,
+    params: {
+      message: payload
+    }
+  }).then(function(res) {
+    payload = res.response.result.payload;
+    callback(null, payload)
+  }).catch(function(err) {
+    callback(err, null);
+  })
+};
 
 var invokeHelloWorld = function(payload) {
   ow.actions.invoke({
@@ -62,4 +74,4 @@ var invokeHelloWorld = function(payload) {
   })
 }
 
-invokeTTS("hi my name is Joule")
+module.exports = {invokeTTS, invokeTranslate};
