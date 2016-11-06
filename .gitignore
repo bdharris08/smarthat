@@ -39,3 +39,5 @@ jspm_packages
 config.js
 .DS_Store
 keyfile.json
+
+cloud/ow_api/ow_cred.json
