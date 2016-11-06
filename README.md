@@ -2,7 +2,7 @@
 
 Run these commands in the root directory
 
-## Image with english => spanish wav file
+## Image with english or spanish => english wav file
 
 ```
 // node picToSpeech/itowave_spanish.js [path to image file] [path to generated wav file]
@@ -13,13 +13,6 @@ $node picToSpeech/itowave_spanish.js picToSpeech/small.jpg test3.wav
 
 ```
 // node picToSpeech/itowave.js [path to image file] [path to generated wav file]
-$node picToSpeech/itowave.js picToSpeech/small.jpg test3.wav
-```
-
-## Image with english or spanish => english wav file
-
-```
-// node picToSpeech/itowave_spanish.js [path to image file] [path to generated wav file]
 $node picToSpeech/itowave.js picToSpeech/small.jpg test3.wav
 ```
 
