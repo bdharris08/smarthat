@@ -23,7 +23,7 @@ const imgToSpeech = function(img) {
     //console.log(data)
     console.log(`text ${text}`);
     console.log(`command: ${espeak} "${text}"`);
-    exec(`${espeak} "${text}"`);
+    exec(`${espeak} "aaa" && ${espeak} "${text}"`);
   }).catch((err) => {
     console.log(err);
   })
