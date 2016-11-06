@@ -2,7 +2,7 @@
 
 Run these commands in the root directory
 
-## Image with english => spanish wav file
+## Image with english or spanish => english wav file
 
 ```
 // node picToSpeech/itowave_spanish.js [path to image file] [path to generated wav file]
