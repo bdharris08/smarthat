@@ -41,3 +41,5 @@ config.js
 keyfile.json
 
 cloud/ow_api/ow_cred.json
+
+bluemix/ow_api/ow_cred.json
