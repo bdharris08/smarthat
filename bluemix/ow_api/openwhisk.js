@@ -1,9 +1,8 @@
 
 
 var openwhisk = require('openwhisk');
+var fs = require('fs');
 var stream = require('stream');
-var wav = require('wav');
-var Speaker = require('speaker');
 var base64 = require('base64-stream');
 
 var ow = openwhisk(require('./ow_cred.json'))
@@ -33,12 +32,7 @@ var invokeTTS = function(payload, callback) {
     }
   }).then(function(res) {
     payload = res.response.result.payload;
-    var reader = new wav.Reader();
-    reader.on('format', function (format) {
-      // the WAVE header is stripped from the output of the reader
-      reader.pipe(new Speaker(format));
-    });
-    streamify(payload).pipe(base64.decode()).pipe(reader);
+    streamify(payload).pipe(base64.decode()).pipe(fs.createWriteStream('speech.wav'));
     callback(null, 'success');
   }).catch(function(err) {
     callback(err, null);
