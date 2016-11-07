@@ -24,11 +24,7 @@ See issues for some ideas.
    $ sudo apt-get update
    $ sudo apt-get install git
    ```
-2. Install Node (6.x LTS) on the Joule
-   ```
-   $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -   
-   $ sudo apt-get install -y nodejs  
-   ```
+2. Install Node (6.x LTS) on the Joule - [Instructions](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 3. From the github website, fork this repo to your own github account using the fork button on the top right.
 4. Clone your new repo to the board - [Instructions](https://help.github.com/articles/cloning-a-repository/)
 5. Set up your free [Bluemix trial account](https://www.ibm.com/bluemix)
