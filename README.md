@@ -26,8 +26,8 @@ See issues for some ideas.
    ```
 2. Install Node (6.x LTS) on the Joule
    ```
-   $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-   $ sudo apt-get install -y nodejs
+   $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -   
+   $ sudo apt-get install -y nodejs  
    ```
 3. From the github website, fork this repo to your own github account using the fork button on the top right.
 4. Clone your new repo to the board - [Instructions](https://help.github.com/articles/cloning-a-repository/)
